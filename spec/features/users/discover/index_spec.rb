@@ -5,7 +5,7 @@ RSpec.describe "User's Discover Page", type: :feature do
     let(:user_1) {User.create!(name: "Megan", email: "megan@email.com")}
 
     before do
-      visit user_discover_index(user_1)
+      visit user_discover_index_path(user_1)
     end
 
     describe "displays" do
@@ -14,7 +14,7 @@ RSpec.describe "User's Discover Page", type: :feature do
       end
 
       it "text field to search by movie title" do
-        expect(page).to have_field("Movie Title")
+        expect(page).to have_field(:keyword)
       end
 
       it "Search by Movie Title button" do
