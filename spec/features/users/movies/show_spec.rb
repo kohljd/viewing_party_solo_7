@@ -50,7 +50,6 @@ RSpec.describe "Movie Details Page", type: :feature do
       end
 
       it "title" do
-        save_and_open_page
         expect(page).to have_content("Knives Out")
       end
 
@@ -68,7 +67,8 @@ RSpec.describe "Movie Details Page", type: :feature do
 
       it "plot summary" do
         expect(page).to have_content("Summary")
-        expect(page).to have_content(body.summary)
+        expect(page).to have_content("When renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan's dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan's untimely death.")
+        # within block having a string instead of the whole summary written out
       end
     end
 
