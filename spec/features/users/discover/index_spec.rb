@@ -22,7 +22,7 @@ RSpec.describe "User's Discover Page", type: :feature do
       end
     end
 
-    descibe "Discover Top Rate Movies button" do
+    descibe "clicks Discover Top Rate Movies button" do
       it "redirects to Movies Index which displays up to 20 top rated movies" do
         click_button "Discover Top Rated Movies"
         expect(current_path).to eq(user_movies_path(user_1))
@@ -30,7 +30,7 @@ RSpec.describe "User's Discover Page", type: :feature do
       end
     end
 
-    describe "Search by Movie Title" do
+    describe "searches by movie title keyword(s)" do
       it "redirects to Movies Index which displays up to 20 movies w/the matching title keyword(s)" do
         fill_in :keyword, with: "All Dogs"
         click_button "Search by Movie Title"
@@ -42,6 +42,8 @@ RSpec.describe "User's Discover Page", type: :feature do
         click_button "Search by Movie Title"
         expect(current_path).to eq(user_discover_index_path(user_1))
       end
+
+      # test for what happens if no matching movies
     end
   end
 end
