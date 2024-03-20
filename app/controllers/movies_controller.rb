@@ -21,12 +21,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = Rails.application.credentials.tmdb[:api_key]
-    end
-    response = conn.get("/3/movie/#{params[:id]}")
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movie = Movie.new(data)
+    @facade = MovieFacade.new(params[:id])
   end
 
   private

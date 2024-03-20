@@ -1,16 +1,16 @@
-<div class="movie_title"> <%= @movie.title %> </div>
+<div class="movie_title"> <%= @facade.movie.title %> </div>
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie) %>
+<%= button_to "Create Viewing Party for #{@facade.movie.title}", new_user_movie_viewing_party_path(@user, @facade.movie) %>
 
 <div class="movie_details">
-Vote: <%= @movie.vote_average %>
-Runtime: <%= @movie.format_runtime %>
-Genre(s): <%= @movie.list_genres %>
+Vote: <%= @facade.movie.vote_average %>
+Runtime: <%= @facade.movie.format_runtime %>
+Genre(s): <%= @facade.movie.list_genres %>
 </div>
 
 <div class="movie_summary"> 
 <h2>Summary</h2>
-<p><%= @movie.summary %></p>
+<p><%= @facade.movie.summary %></p>
 </div>
