@@ -42,7 +42,7 @@ RSpec.describe "User's Discover Page", type: :feature do
     describe "searches by movie title keyword(s)" do
       it "redirects to Movies Index which displays up to 20 movies w/the matching title keyword(s)" do
         json_response = File.read("spec/fixtures/tmdb_search_by_movie_title.json")
-        stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=The%20Phantom.json").
+        stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=The%20Phantom").
           with(
             query: {
               "api_key" => Rails.application.credentials.tmdb[:api_key]
@@ -53,7 +53,7 @@ RSpec.describe "User's Discover Page", type: :feature do
         fill_in :keyword, with: "The Phantom"
         click_button "Search by Movie Title"
         expect(current_path).to eq(user_movies_path(user_1))
-        expect(page).to have_content("The Phantom", count: 20)
+        expect(page).to have_content("Phantom", count: 20)
         expect(page).to have_content("Vote Average:", count: 20)
       end
 

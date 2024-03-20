@@ -7,9 +7,15 @@ class MoviesController < ApplicationController
       faraday.params["api_key"] = Rails.application.credentials.tmdb[:api_key]
     end
 
-    response = conn.get("/3/discover/movie?include_adult=false&language=en-US&sort_by=vote_average.desc.json")
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movie_results = data[:results].take(20).map {|result_attributes| MovieResult.new(result_attributes)}
+    if params[:keyword]
+      response = conn.get("/3/search/movie?query=#{params[:keyword]}")
+      data = JSON.parse(response.body, symbolize_names: true)
+      @movie_results = data[:results].take(20).map {|result_attributes| MovieResult.new(result_attributes)}
+    else #top rated movies
+      response = conn.get("/3/discover/movie?include_adult=false&language=en-US&sort_by=vote_average.desc.json")
+      data = JSON.parse(response.body, symbolize_names: true)
+      @movie_results = data[:results].take(20).map {|result_attributes| MovieResult.new(result_attributes)}
+    end
   end
 
   private
