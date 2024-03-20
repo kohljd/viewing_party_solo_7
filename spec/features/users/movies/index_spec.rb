@@ -36,8 +36,7 @@ RSpec.describe "Movies Index", type: :feature do
   
       visit user_movies_path(user_1, params:{keyword: "The Phantom"})
       
-      click_on "The Phantom", match: :first
-      expect(current_path).to eq(user_movie_path(user_1))
+      expect(page).to have_link("The Phantom", href: user_movie_path(user_1, id: 9826))
     end
   end
 end
