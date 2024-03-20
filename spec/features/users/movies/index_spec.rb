@@ -23,5 +23,21 @@ RSpec.describe "Movies Index", type: :feature do
       expect(page).to have_button("Discover Top Rated Movies")
       expect(page).to have_button("Search by Movie Title")
     end
+
+    it "displays movie titles as links to their Movie Details page" do
+      json_response = File.read("spec/fixtures/tmdb_search_by_movie_title.json")
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=The%20Phantom").
+        with(
+          query: {
+            "api_key" => Rails.application.credentials.tmdb[:api_key]
+          }
+        ).
+        to_return(status: 200, body: json_response)
+  
+      visit user_movies_path(user_1, params:{keyword: "The Phantom"})
+      
+      click_on "The Phantom", match: :first
+      expect(current_path).to eq(user_movie_path(user_1))
+    end
   end
 end
