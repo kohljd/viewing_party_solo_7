@@ -21,5 +21,50 @@ RSpec.describe "User's Discover Page", type: :feature do
         expect(page).to have_button("Search by Movie Title")
       end
     end
+
+    describe "clicks Discover Top Rate Movies button" do
+      it "redirects to Movies Index which displays up to 20 top rated movies" do
+        json_response = File.read("spec/fixtures/tmdb_movies_top_rated.json")
+        stub_request(:get, "https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=vote_average.desc.json").
+          with(
+            query: {
+              "api_key" => Rails.application.credentials.tmdb[:api_key]
+            }
+          ).
+          to_return(status: 200, body: json_response)
+
+        click_button "Discover Top Rated Movies"
+        expect(current_path).to eq(user_movies_path(user_1))
+        expect(page).to have_content("Vote Average:", count: 20)
+      end
+    end
+
+    describe "searches by movie title keyword(s)" do
+      it "redirects to Movies Index which displays up to 20 movies w/the matching title keyword(s)" do
+        json_response = File.read("spec/fixtures/tmdb_search_by_movie_title.json")
+        stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=The%20Phantom").
+          with(
+            query: {
+              "api_key" => Rails.application.credentials.tmdb[:api_key]
+            }
+          ).
+          to_return(status: 200, body: json_response)
+
+        fill_in :keyword, with: "The Phantom"
+        click_button "Search by Movie Title"
+        expect(current_path).to eq(user_movies_path(user_1))
+        expect(page).to have_content("Phantom", count: 20)
+        expect(page).to have_content("Vote Average:", count: 20)
+      end
+
+      it "can't redirect if no keyword entered" do
+        fill_in :keyword, with: ""
+        click_on "Search by Movie Title"
+        expect(current_path).to eq(user_discover_index_path(user_1))
+        expect(page).to have_content("Please fill out the search box")
+      end
+
+      # test for what happens if no matching movies
+    end
   end
 end

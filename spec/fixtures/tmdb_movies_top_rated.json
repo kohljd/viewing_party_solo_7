@@ -1,0 +1,377 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/bxRpIYTiqVyuQjPuV53P0DDnbbq.jpg",
+          "genre_ids": [
+              18,
+              27,
+              53
+          ],
+          "id": 1261902,
+          "original_language": "en",
+          "original_title": "Six",
+          "overview": "Two kids Lila and Theo are relaxing at home when they receive a strange call. At first they think nothing of it, but after they answer they realize something is wrong. They are given 6 challenges to complete, and after starting easy the challenges become tragic. Can they survive the challenges, and what if they don't.",
+          "popularity": 0.0,
+          "poster_path": null,
+          "release_date": "2023-02-19",
+          "title": "Six",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/893NNk0GrMSBJ75JrBx1Rbg28AB.jpg",
+          "genre_ids": [
+              28,
+              12,
+              16,
+              80
+          ],
+          "id": 1261794,
+          "original_language": "ja",
+          "original_title": "ジョジョの奇妙な冒険 ダイヤモンドは砕けない",
+          "overview": "The year is 1999. Morioh, a normally quiet and peaceful town, has recently become a hotbed of strange activity. Joutarou Kuujou, now a marine biologist, heads to the mysterious town to meet Jousuke Higashikata. While the two may seem like strangers at first, Jousuke is actually the illegitimate child of Joutarou's grandfather, Joseph Joestar. When they meet, Joutarou realizes that he may have more in common with Jousuke than just a blood relation.",
+          "popularity": 0.0,
+          "poster_path": "/3EWOtk522nhBkcr8Nb4YcUpFATm.jpg",
+          "release_date": "2016-04-02",
+          "title": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 1261566,
+          "original_language": "nb",
+          "original_title": "Jungelboken",
+          "overview": "",
+          "popularity": 0.0,
+          "poster_path": null,
+          "release_date": "",
+          "title": "Jungelboken",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 2
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 1261554,
+          "original_language": "pl",
+          "original_title": "Historia komputera",
+          "overview": "",
+          "popularity": 0.0,
+          "poster_path": null,
+          "release_date": "",
+          "title": "Historia komputera",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/yxwXkRQqj28bpwoE4q9s2HI5Pwx.jpg",
+          "genre_ids": [
+              99,
+              18
+          ],
+          "id": 1261526,
+          "original_language": "nl",
+          "original_title": "Rando’s story",
+          "overview": "",
+          "popularity": 0.0,
+          "poster_path": "/jGns9EHy6ZuNPEBTWo7LlIgz0TH.jpg",
+          "release_date": "2024-03-19",
+          "title": "Rando’s story",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 2
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/oiX6nZVq4mIN1WIvO17cDbb57QS.jpg",
+          "genre_ids": [
+              10749,
+              18,
+              35
+          ],
+          "id": 1261351,
+          "original_language": "it",
+          "original_title": "Drive In",
+          "overview": "",
+          "popularity": 1.4,
+          "poster_path": "/d1nVNL6d2KW6Kq4InGHgE9cZYre.jpg",
+          "release_date": "2024-03-19",
+          "title": "Drive In",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/1VlYWe8KKATGjFsXDCPvBOxnS76.jpg",
+          "genre_ids": [
+              18,
+              14,
+              10749
+          ],
+          "id": 1261224,
+          "original_language": "fr",
+          "original_title": "Essai Post-Romantique",
+          "overview": "",
+          "popularity": 1.4,
+          "poster_path": "/4RZWNZ2DJJUehQwz09Bo0D99vLv.jpg",
+          "release_date": "2024-03-18",
+          "title": "Essai Post-Romantique",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/rWuHf5WVwtVnrM069zXiZkPtKAC.jpg",
+          "genre_ids": [
+              27
+          ],
+          "id": 1261165,
+          "original_language": "fr",
+          "original_title": "Beau",
+          "overview": "",
+          "popularity": 0.6,
+          "poster_path": null,
+          "release_date": "",
+          "title": "Beau",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              10751,
+              10749
+          ],
+          "id": 1261147,
+          "original_language": "en",
+          "original_title": "Солено и сладко",
+          "overview": "This is a story for two completely different generations and ages. Placed in an 'unusual' situation a father will manage in finding strength and hope first for himself in order to be able a role model for his little boy. Their Christmas pray will bring them together on the way to each other. This touching story will discover that life should not be defined. It should be perceived as a process and not as a category.",
+          "popularity": 0.783,
+          "poster_path": "/aiq3TMW6jB308d6z7s7yy9SHSyy.jpg",
+          "release_date": "2011-10-21",
+          "title": "Salty and sweet",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18,
+              10752,
+              36
+          ],
+          "id": 1261076,
+          "original_language": "en",
+          "original_title": "The Dropping of The First Atomic Bomb. An R & L Studios short.",
+          "overview": "The bomb, the intensity, the moment. A story of the mental impact of the dropping of the Atomic Bomb.",
+          "popularity": 1.162,
+          "poster_path": null,
+          "release_date": "2023-10-23",
+          "title": "The Dropping of The First Atomic Bomb. An R & L Studios short.",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 1261071,
+          "original_language": "en",
+          "original_title": "Footlights",
+          "overview": "A homeless man alternates between living on the streets and performing on stage. We get a glimpse of the inner pain and frustration that this dual life is causing.",
+          "popularity": 1.207,
+          "poster_path": null,
+          "release_date": "2023-11-29",
+          "title": "Footlights",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18,
+              35
+          ],
+          "id": 1261064,
+          "original_language": "en",
+          "original_title": "The End",
+          "overview": "Set during the eve of doomsday. We focus on the emotional turmoil that Ian finds himself in when he has to make a decision regarding whom to spend his last evening with: his wife, Sharon, or his lover, Amy.",
+          "popularity": 0.793,
+          "poster_path": "/TOaPrcha2MQYjni3158m8OWHfP.jpg",
+          "release_date": "2020-08-01",
+          "title": "The End",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 1261058,
+          "original_language": "en",
+          "original_title": "The Last Grain",
+          "overview": "Mr. Bailey has come to a stage in his life where everyone around him has long left him, including his wife. To help shelter him from the pain of reality, he has his dog whom he has a strong bond with. After yet another traumatic event, Mr. Bailey reaches a turning point where he realizes that embracing death might be more realistic than fearing it.",
+          "popularity": 1.4,
+          "poster_path": "/sJxanBUVZ3kHZ3Z5EIZR5JHDNPJ.jpg",
+          "release_date": "2017-05-16",
+          "title": "The Last Grain",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              10752,
+              27
+          ],
+          "id": 1261055,
+          "original_language": "en",
+          "original_title": "Insanity",
+          "overview": "This is an anti war film where we see a soldier's psychological state deteriorate due to the effects of war. It is not set in any particular time or war as it is meant to represent the soldier's post-combat state of mind.",
+          "popularity": 0.6,
+          "poster_path": "/7Bt7MGNYcLWfHn2Pecc4Zzaq1yT.jpg",
+          "release_date": "2015-06-13",
+          "title": "Insanity",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              10402
+          ],
+          "id": 1261040,
+          "original_language": "en",
+          "original_title": "Roses In The Nordic Countries",
+          "overview": "This music video depicts a slice of life of a family where the baby's innocence and joy of life contrasts starkly with the sadness and existential angst of his parents.",
+          "popularity": 0.6,
+          "poster_path": "/cCM79XMADEuBRBOc4Zi4iFInHcH.jpg",
+          "release_date": "2013-08-29",
+          "title": "Roses In The Nordic Countries",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              35
+          ],
+          "id": 1261035,
+          "original_language": "en",
+          "original_title": "One Way To Go",
+          "overview": "This black comedy takes place in the span of a morning and afternoon where we enter the lives of two awkward young English adults who have been forced into living with their authoritarian Italian grandmother who resides in Malta. Together they like skinning animals for fun and, after skinning their first cat, things get out of hand.",
+          "popularity": 0.6,
+          "poster_path": "/ugdrF49KkKfIxVMyirNNy8jJN2X.jpg",
+          "release_date": "2013-07-11",
+          "title": "One Way To Go",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              80,
+              53
+          ],
+          "id": 1261034,
+          "original_language": "en",
+          "original_title": "Do You Want Ice With That",
+          "overview": "This is a psychological thriller involving two young men. Barry and Stan are at Barry's house when Barry insists that Stan should add some ice from the icebox to his drink. Stan returns speechless as he finds, wedged in the icebox, two little boys, bound and gagged.",
+          "popularity": 0.6,
+          "poster_path": "/73krIrf9kg6mhNg2d9GeGf9s8ms.jpg",
+          "release_date": "2012-02-02",
+          "title": "Do You Want Ice With That",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 1261033,
+          "original_language": "en",
+          "original_title": "\"S\"",
+          "overview": "A woman gives birth to a baby girl in an asylum that appears to operate a brutal and abusive regime. The baby is \"sold\" by the doctor in charge of the asylum to the mother's extreme distress.",
+          "popularity": 0.6,
+          "poster_path": "/zRfcknFDQJHR1lQrsMIXLQ9PNwH.jpg",
+          "release_date": "2012-05-05",
+          "title": "\"S\"",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 1261029,
+          "original_language": "en",
+          "original_title": "Rokna",
+          "overview": "Based in the Maltese countryside this film seeks to evoke the tranquility of the simple lifestyle of a hunter/farmer. It tells the story of a hunter and his dog. One day, when they are hunting a rabbit, a tragic accident occurs.",
+          "popularity": 0.6,
+          "poster_path": "/pbhH7DiLkb3eVqt2QEb8Bu5pV5V.jpg",
+          "release_date": "2012-10-03",
+          "title": "Rokna",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 1261024,
+          "original_language": "en",
+          "original_title": "Close Shave",
+          "overview": "Set a few decades ago. The serene, even joyful atmosphere, created by Mario Lanza's \"Funiculì, Funiculà\" and the soft lighting characterize the normal morning routine of a father and his son. This turns into tragedy as the son experiments with his first and last shave.",
+          "popularity": 0.6,
+          "poster_path": "/ycBbbZTTc1TvYCcBdXu2BB46meU.jpg",
+          "release_date": "2012-12-12",
+          "title": "Close Shave",
+          "video": false,
+          "vote_average": 10.0,
+          "vote_count": 1
+      }
+  ],
+  "total_pages": 43102,
+  "total_results": 862040
+}
