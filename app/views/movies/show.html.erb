@@ -1,0 +1,13 @@
+<div class="movie_title"> <%= movie.title %> </div>
+
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+
+<%= button_to "Create Viewing Party for #{movie.title}", new_user_movie_viewing_party_path(@user, @movie) %>
+
+<div class="movie_details">
+Vote: <%= movie.vote_average %>
+Runtime: <%= movie.runtime %>
+Genre(s): <%= movie.genre %> <!-- will likely need rewritten -->
+</div>
+
+<div>

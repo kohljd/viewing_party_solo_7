@@ -28,19 +28,19 @@ RSpec.describe "Movie Details Page", type: :feature do
 
     describe "displays movie's details" do
       it "title" do
-        expect(page).to have_content()
+        expect(page).to have_content("Knives Out")
       end
 
       it "vote average" do
-        expect(page).to have_content("Vote: __")
+        expect(page).to have_content("Vote: 7.8")
       end
 
       it "runtime in hours & minutes" do
-        expect(page).to have_content("Runtime: hr min")
+        expect(page).to have_content("Runtime: 2hr 11min")
       end
 
       it "associated genre(s)" do
-        expect(page).to have_content("Genre: Action, Comedy")
+        expect(page).to have_content("Genre: Comedy, Crime, Mystery")
       end
 
       it "plot summary" do
