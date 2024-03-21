@@ -22,6 +22,15 @@ RSpec.describe "Movie Details Page", type: :feature do
           }
         ).
         to_return(status: 200, body: json_response_2)
+
+      json_response_3 = File.read("spec/fixtures/tmdb_movie_reviews.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/546554/reviews").
+        with(
+          query: {
+            "api_key" => Rails.application.credentials.tmdb[:api_key]
+          }
+        ).
+        to_return(status: 200, body: json_response_3)
         
       visit user_movie_path(user_1, id: 546554)
     end
@@ -104,23 +113,27 @@ RSpec.describe "Movie Details Page", type: :feature do
       end
     end
 
-    # describe "displays movie's reviews" do
-    #   # before do
-    #   #   # webmock things
-    #   #   visit user_movie_path(user_1, movie_1)
-    #   # end
-      
-    #   xit "total review count" do
+    describe "displays movie's reviews" do      
+      it "total review count" do
+        expect(page).to have_content("15 Reviews")
+        save_and_open_page
+      end
 
-    #   end
+      it "with each review's information" do
+        expect(page).to have_css(".movie_review", count: 15)
 
-    #   xit "with each review's information" do
+        within ".movie_review", match: :first do
+          expect(page).to have_content("SWITCH.")
+          expect(page).to have_content("November 25th, 2019")
+          expect(find(:css, ".review_content").text).to start_with("This is a crime thriller that’s been a long time in the making.")
+          expect(find(:css, ".review_rating").text).to have_content("9.0")
+        end
+      end
 
-    #   end
-
-    #   xit "with each review's author" do
-
-    #   end
-    # end
+      it "with each review's author" do
+        expect(page).to have_css(".review_author", count: 15)
+        expect(find(:css, ".review_author", match: :first).text).to eq("SWITCH.")
+      end
+    end
   end
 end

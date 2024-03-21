@@ -24,3 +24,15 @@
     </div>
   <% end %>
 </div>
+
+<div class="movie_reviews">
+  <h2> <%= @facade.reviews.count %> Reviews </h2>
+  <% @facade.reviews.each do |review| %>
+    <div class="movie_review">
+      <div class="review_author"> <%= review.author %> </div>
+      <div class="review_created_at"> <%= review.date_written %> </div>
+      <div class="review_rating"> <%= review.movie_rating %> </div>
+      <div class="review_content"> <%= review.content %> </div>
+    </div>
+  <% end %>
+</div>
