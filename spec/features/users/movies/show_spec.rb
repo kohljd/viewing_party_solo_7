@@ -46,7 +46,7 @@ RSpec.describe "Movie Details Page", type: :feature do
           ).
           to_return(status: 200, body: json_response)
 
-        visit user_movie_path(user_1,id: 546554)
+        visit user_movie_path(user_1, id: 546554)
       end
 
       it "title" do
@@ -72,17 +72,58 @@ RSpec.describe "Movie Details Page", type: :feature do
     end
 
     describe "displays movie's cast" do
-      # before do
-      #   # webmock things
-      #   visit user_movie_path(user_1, movie_1)
-      # end
-
-      xit "lists the first 10 cast members" do
-
+      before do
+        json_response = File.read("spec/fixtures/tmdb_movie_details.json")
+        stub_request(:get, "https://api.themoviedb.org/3/movie/546554").
+          with(
+            query: {
+              "api_key" => Rails.application.credentials.tmdb[:api_key]
+            }
+          ).
+          to_return(status: 200, body: json_response)
+          
+        visit user_movie_path(user_1, id: 546554)
       end
 
-      xit "lists cast member's name and their character's name" do
+      it "lists the first 10 cast members" do
+        expect(page).to have_css("cast_member", count: 10)
+      end
 
+      it "lists cast member's name and their character's name" do
+        within ".movie_cast" do
+          expect(page).to have_content("Daniel Craig")
+          expect(page).to have_content("Benoit Blanc")
+
+          expect(page).to have_content("Chris Evans")
+          expect(page).to have_content("Ransom Drysdale")
+
+          expect(page).to have_content("Ana de Armas")
+          expect(page).to have_content("Marta Cabrera")
+
+          expect(page).to have_content("Jamie Lee Curtis")
+          expect(page).to have_content("Linda Drysdale")
+
+          expect(page).to have_content("Michael Shannon")
+          expect(page).to have_content("Walt Thrombey")
+          
+          expect(page).to have_content("Don Johnson")
+          expect(page).to have_content("Richard Drysdale")
+
+          expect(page).to have_content("Toni Collette")
+          expect(page).to have_content("Joni Thrombey")
+
+          expect(page).to have_content("LaKeith Stanfield")
+          expect(page).to have_content("Lieutenant Elliott")
+
+          expect(page).to have_content("Christopher Plummer")
+          expect(page).to have_content("Harlan Thrombey")
+
+          expect(page).to have_content("Katherine Langford")
+          expect(page).to have_content("Meg Thrombey")
+
+          expect(page).to have_content("Jaeden Martell")
+          expect(page).to have_content("Jacob Thrombey")
+        end
       end
     end
 
