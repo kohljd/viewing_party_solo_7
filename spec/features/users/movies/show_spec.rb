@@ -74,7 +74,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     describe "displays movie's cast" do
       before do
         json_response = File.read("spec/fixtures/tmdb_movie_details.json")
-        stub_request(:get, "https://api.themoviedb.org/3/movie/546554").
+        stub_request(:get, "https://api.themoviedb.org/3/movie/546554/credits").
           with(
             query: {
               "api_key" => Rails.application.credentials.tmdb[:api_key]
