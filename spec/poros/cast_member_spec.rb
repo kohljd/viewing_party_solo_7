@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe CastMember do
-  it "is a movie with attributes" do
+  it "is a cast member with attributes" do
     attributes = {
       id: 8784,
       name: "Daniel Craig",

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe MovieResult do
-  it "is a movie with attributes" do
+  it "is a movie search result with attributes" do
     attributes = {
       title: "Howl's Moving Castle",
       vote_average: 9,
