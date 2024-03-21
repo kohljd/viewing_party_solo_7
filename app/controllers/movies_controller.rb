@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :find_user, only: [:index]
-  # before_action :find_user_and_movie, only: [:show]
+  before_action :find_user, only: [:index, :show]
 
   def index
     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -21,13 +20,12 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @facade = MovieFacade.new(params[:id])
+  end
+
   private
   def find_user
     @user = User.find(params[:user_id])
   end
-
-  # def find_user_and_movie
-  #   find_user
-  #   @movie = Movie.find(params[:movie_id])
-  # end
 end
