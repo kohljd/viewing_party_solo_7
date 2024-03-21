@@ -25,7 +25,7 @@ RSpec.describe "User's Discover Page", type: :feature do
     describe "clicks Discover Top Rate Movies button" do
       it "redirects to Movies Index which displays up to 20 top rated movies" do
         json_response = File.read("spec/fixtures/tmdb_movies_top_rated.json")
-        stub_request(:get, "https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=vote_average.desc.json").
+        stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").
           with(
             query: {
               "api_key" => Rails.application.credentials.tmdb[:api_key]

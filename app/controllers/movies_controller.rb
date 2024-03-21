@@ -7,8 +7,9 @@ class MoviesController < ApplicationController
     end
 
     if params[:discover]
-      response = conn.get("/3/discover/movie?include_adult=false&language=en-US&sort_by=vote_average.desc.json")
+      response = conn.get("/3/movie/top_rated")
       data = JSON.parse(response.body, symbolize_names: true)
+      # require 'pry'; binding.pry
       @movie_results = data[:results].take(20).map {|result_attributes| MovieResult.new(result_attributes)}
     elsif params[:keyword] != ""
       response = conn.get("/3/search/movie?query=#{params[:keyword]}")
@@ -22,7 +23,7 @@ class MoviesController < ApplicationController
 
   def show
     movie_id = params[:id]
-    
+
     @movie = MovieFacade.movie(movie_id)
     @cast_members = MovieFacade.cast_members(movie_id)
     @reviews = MovieFacade.reviews(movie_id)
