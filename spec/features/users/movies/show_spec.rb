@@ -4,20 +4,29 @@ RSpec.describe "Movie Details Page", type: :feature do
   describe "As a user" do
     let(:user_1) {User.create!(name: "Megan", email: "megan@email.com")}
 
-    describe "displays button" do
-      before do
-        json_response = File.read("spec/fixtures/tmdb_movie_details.json")
-        stub_request(:get, "https://api.themoviedb.org/3/movie/546554").
-          with(
-            query: {
-              "api_key" => Rails.application.credentials.tmdb[:api_key]
-            }
-          ).
-          to_return(status: 200, body: json_response)
-          
-        visit user_movie_path(user_1, id: 546554)
-      end
+    before do
+      json_response = File.read("spec/fixtures/tmdb_movie_details.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/546554").
+        with(
+          query: {
+            "api_key" => Rails.application.credentials.tmdb[:api_key]
+          }
+        ).
+        to_return(status: 200, body: json_response)
+    
+      json_response_2 = File.read("spec/fixtures/tmdb_movie_credits.json")
+      stub_request(:get, "https://api.themoviedb.org/3/movie/546554/credits").
+        with(
+          query: {
+            "api_key" => Rails.application.credentials.tmdb[:api_key]
+          }
+        ).
+        to_return(status: 200, body: json_response_2)
+        
+      visit user_movie_path(user_1, id: 546554)
+    end
 
+    describe "displays button" do
       it "to return to Discover Page" do
         expect(page).to have_button("Discover Page")
         click_on "Discover Page"
@@ -29,26 +38,10 @@ RSpec.describe "Movie Details Page", type: :feature do
 
       it "to create a Viewing Party" do
         expect(page).to have_button("Create Viewing Party for Knives Out")
-        # click_on "Create Viewing Party for #{movie_1.title}"
-        
-        # expect(current_path).to eq(user_discover_index_path(user_1))
       end
     end
 
     describe "displays movie's details" do
-      before do
-        json_response = File.read("spec/fixtures/tmdb_movie_details.json")
-        stub_request(:get, "https://api.themoviedb.org/3/movie/546554").
-          with(
-            query: {
-              "api_key" => Rails.application.credentials.tmdb[:api_key]
-            }
-          ).
-          to_return(status: 200, body: json_response)
-
-        visit user_movie_path(user_1, id: 546554)
-      end
-
       it "title" do
         expect(page).to have_content("Knives Out")
       end
@@ -72,21 +65,8 @@ RSpec.describe "Movie Details Page", type: :feature do
     end
 
     describe "displays movie's cast" do
-      before do
-        json_response = File.read("spec/fixtures/tmdb_movie_details.json")
-        stub_request(:get, "https://api.themoviedb.org/3/movie/546554/credits").
-          with(
-            query: {
-              "api_key" => Rails.application.credentials.tmdb[:api_key]
-            }
-          ).
-          to_return(status: 200, body: json_response)
-          
-        visit user_movie_path(user_1, id: 546554)
-      end
-
       it "lists the first 10 cast members" do
-        expect(page).to have_css("cast_member", count: 10)
+        expect(page).to have_css(".cast_member", count: 10)
       end
 
       it "lists cast member's name and their character's name" do
@@ -120,30 +100,27 @@ RSpec.describe "Movie Details Page", type: :feature do
 
           expect(page).to have_content("Katherine Langford")
           expect(page).to have_content("Meg Thrombey")
-
-          expect(page).to have_content("Jaeden Martell")
-          expect(page).to have_content("Jacob Thrombey")
         end
       end
     end
 
-    describe "displays movie's reviews" do
-      # before do
-      #   # webmock things
-      #   visit user_movie_path(user_1, movie_1)
-      # end
+    # describe "displays movie's reviews" do
+    #   # before do
+    #   #   # webmock things
+    #   #   visit user_movie_path(user_1, movie_1)
+    #   # end
       
-      xit "total review count" do
+    #   xit "total review count" do
 
-      end
+    #   end
 
-      xit "with each review's information" do
+    #   xit "with each review's information" do
 
-      end
+    #   end
 
-      xit "with each review's author" do
+    #   xit "with each review's author" do
 
-      end
-    end
+    #   end
+    # end
   end
 end

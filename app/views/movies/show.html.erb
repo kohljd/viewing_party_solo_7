@@ -14,3 +14,13 @@
   <h2>Summary</h2>
   <p><%= @facade.movie.summary %></p>
 </div>
+
+<div class="movie_cast">
+  <h2>Cast</h2>
+  <% @facade.cast_members.each do |cast_member| %>
+    <div class="cast_member">
+      <div class="actor_role"> <%= cast_member.character %> </div>
+      <div class="actor_name"> <%= cast_member.name %> </div>
+    </div>
+  <% end %>
+</div>
