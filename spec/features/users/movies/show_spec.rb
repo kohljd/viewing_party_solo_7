@@ -116,7 +116,6 @@ RSpec.describe "Movie Details Page", type: :feature do
     describe "displays movie's reviews" do      
       it "total review count" do
         expect(page).to have_content("15 Reviews")
-        save_and_open_page
       end
 
       it "with each review's information" do
