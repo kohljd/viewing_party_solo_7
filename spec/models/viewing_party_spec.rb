@@ -14,7 +14,6 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of :movie_id }
   end
 
-
   it "date/start_time must be in the future" do
     past_date = (DateTime.now - 1.day).to_fs(:db)
     past_start = (DateTime.now - 2.hours).to_fs(:db)
