@@ -2,7 +2,7 @@
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, movie_id: @movie.movie_id), method: :get %>
 
 <div class="movie_details">
   Vote: <%= @movie.vote_average %>
