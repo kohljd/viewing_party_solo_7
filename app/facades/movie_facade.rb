@@ -1,23 +1,39 @@
 class MovieFacade
-  def initialize(movie_id)
-    @movie_id = movie_id
+  def self.movie_results(search_param)
+    if search_param == "top_rated"
+      json = MovieService.top_rated_movies
+
+      json[:results].take(20).map do |result_data|
+        MovieResult.new(result_data)
+      end
+    else #search_param == keyword
+      json = MovieService.search_for_movie(search_param)
+
+      json[:results].take(20).map do |result_data|
+        MovieResult.new(result_data)
+      end
+    end
   end
 
-  def movie
-    service = MovieService.new
-    json = service.movie_details(@movie_id)
-    @movie = Movie.new(json)
+  def self.movie(movie_id)
+    json = MovieService.movie_details(movie_id)
+
+    Movie.new(json)
   end
 
-  def cast_members
-    service = MovieService.new
-    json = service.cast_members(@movie_id)
-    @cast_members = json[:cast].take(10).map {|cast_member_info| CastMember.new(cast_member_info)}
+  def self.cast_members(movie_id)
+    json = MovieService.cast_members(movie_id)
+
+    json[:cast].take(10).map do |cast_member_info| 
+      CastMember.new(cast_member_info)
+    end
   end
 
-  def reviews
-    service = MovieService.new
-    json = service.reviews(@movie_id)
-    @reviews = json[:results].map {|review_data| MovieReview.new(review_data)}
+  def self.reviews(movie_id)
+    json = MovieService.reviews(movie_id)
+
+    json[:results].map do |review_data| 
+      MovieReview.new(review_data)
+    end
   end
 end
