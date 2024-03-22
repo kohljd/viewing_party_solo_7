@@ -1,4 +1,20 @@
 class MovieFacade
+  def self.movie_results(search_param)
+    if search_param == "top_rated"
+      json = MovieService.top_rated_movies
+
+      json[:results].take(20).map do |result_data|
+        MovieResult.new(result_data)
+      end
+    else #search_param == keyword
+      json = MovieService.search_for_movie(search_param)
+
+      json[:results].take(20).map do |result_data|
+        MovieResult.new(result_data)
+      end
+    end
+  end
+
   def self.movie(movie_id)
     json = MovieService.movie_details(movie_id)
 

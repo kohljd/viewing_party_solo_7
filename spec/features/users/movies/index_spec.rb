@@ -14,7 +14,7 @@ RSpec.describe "Movies Index", type: :feature do
           ).
           to_return(status: 200, body: json_response)
 
-      visit user_movies_path(user_1, params:{discover: :top_rated})
+      visit user_movies_path(user_1, params:{keyword: :top_rated})
           
       expect(page).to have_button("Discover Page")
       click_on "Discover Page"
