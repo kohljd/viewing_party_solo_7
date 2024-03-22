@@ -29,5 +29,12 @@ RSpec.describe "New Viewing Party", type: :feature do
         expect(page).to have_content("Invited Users")
       end
     end
+
+    describe "submitting form to create a viewing party" do
+      it "redirects to user's dashboard" do
+        click_on "Create Viewing Party"
+        expect(current_path).to eq(user_path(user_1))
+      end
+    end
   end
 end

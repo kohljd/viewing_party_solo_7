@@ -20,7 +20,7 @@ class ViewingParty < ApplicationRecord
     parsed_time = Time.parse(start_time)
 
     date_time_combo = DateTime.new(parsed_date.year, parsed_date.month, parsed_date.day, parsed_time.hour, parsed_time.min)
-    unless date_time_combo > DateTime.now
+    unless date_time_combo >= DateTime.now
       errors.add(:date, :start_time, message: "can't be in the past")
     end
   end
