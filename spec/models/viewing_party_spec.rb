@@ -34,8 +34,8 @@ RSpec.describe ViewingParty, type: :model do
 
   describe "instance methods" do
     it "returns user that is hosting the party" do
-      user_1 = User.create!(name: "Sam", email: "same@mail.com", password: "password_1")
-      user_2 = User.create!(name: "Tommy", email: "tommy@email.com", password: "password_2")
+      user_1 = User.create!(name: "Sam", email: "same@mail.com", password: "password_1", password_confirmation: "password_1")
+      user_2 = User.create!(name: "Tommy", email: "tommy@email.com", password: "password_2", password_confirmation: "password_2")
       day = (DateTime.now + 1.day).to_fs(:db)
 
       party = ViewingParty.create!(date: day, start_time: "07:25", duration: 175, movie_id: 546554)

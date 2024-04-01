@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Movies Index", type: :feature do
   describe "As a user" do
-    let(:user_1) {User.create!(name: "Megan", email: "megan@email.com")}
+    let(:user_1) {User.create!(name: "Megan", email: "megan@email.com", password: "password_1", password_confirmation: "password_1")}
 
     it "displays button to return to Discover Movies Page" do
       json_response = File.read("spec/fixtures/tmdb_movies_top_rated.json")

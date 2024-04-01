@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Create New User', type: :feature do
   describe 'When user visits "/register"' do
     before(:each) do
-      @user = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'password_1')
-      @user = User.create!(name: 'Sam', email: 'sam@email.com', password: 'password_2')
+      @user = User.create!(name: 'Tommy', email: 'tommy@email.com', password: 'password_1', password_confirmation: 'password_1')
+      @user = User.create!(name: 'Sam', email: 'sam@email.com', password: 'password_2', password_confirmation: 'password_2')
 
       visit register_user_path
     end
@@ -55,7 +55,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content("Name can't be blank, Email can't be blank, Email is invalid, Password can't be blank, Password confirmation doesn't match Password")
+      expect(page).to have_content("Name can't be blank, Email can't be blank, Password can't be blank, Password confirmation can't be blank, Email is invalid, Password confirmation doesn't match Password")
     end
 
     it 'They fill in form with invalid email format (only somethng@something.something)' do 
