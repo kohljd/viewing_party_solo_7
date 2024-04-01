@@ -55,7 +55,7 @@ RSpec.describe 'Create New User', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq(register_user_path)
-      expect(page).to have_content("Name can't be blank, Email can't be blank")
+      expect(page).to have_content("Name can't be blank, Email can't be blank, Email is invalid, Password can't be blank, Password confirmation doesn't match Password")
     end
 
     it 'They fill in form with invalid email format (only somethng@something.something)' do 
