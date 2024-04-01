@@ -1,5 +1,5 @@
 
-<%= form_with model: [ViewingParty.new, UserParty.new], url: user_movie_viewing_party_index_path(@user, movie_id: @movie.movie_id), params:{guests: :user_ids, host: @user}, class: "form-horizontal" do |f| %>
+<%= form_with url: user_movie_viewing_party_index_path(@user, movie_id: @movie.movie_id), method: :post, class: "form-horizontal" do |f| %>
   <div class="form-group">
     <%= f.label :movie_id, "Movie Title", class: "col-md-2 col-form-label" %>
     <%= @movie.title %> 
@@ -13,14 +13,14 @@
 
   <div class="form-group">
     <%= f.label :date, "Day", class: "col-md-2 col-form-label" %>
-    <%= f.date_field :date, value: Date.today, min: Date.today %>
+    <%= f.date_field :date, value: Date.today %>
   </div>
 
   <div class="form-group">
     <%= f.label :start_time, "Start Time", class: "col-md-2 col-form-label" %>
     <%= f.time_field :start_time, value: (Time.now + 1.hour).to_fs(:time), min: Time.now.to_fs(:time) %>
   </div><br>
-  
+
   <div>
     <%= "Invited Users"%>
     <%= f.collection_check_boxes :user_id, User.where.not(id: @user).order(:name), :id, :email do |box| %>
@@ -30,7 +30,6 @@
       </div>
     <% end %>
   </div><br>
-   <%= f.hidden_field :host, value: @user %>
 
   <%= f.submit "Create Viewing Party" %>
 <% end %>
