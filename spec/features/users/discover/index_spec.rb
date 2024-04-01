@@ -57,7 +57,7 @@ RSpec.describe "User's Discover Page", type: :feature do
         expect(page).to have_content("Vote Average:", count: 20)
       end
 
-      xit "can't redirect if no keyword entered" do
+      it "can't redirect if no keyword entered" do
         fill_in :keyword, with: ""
         click_on "Search by Movie Title"
         expect(current_path).to eq(user_discover_index_path(user_1))
