@@ -20,7 +20,7 @@ RSpec.describe ViewingParty, type: :model do
     past_party = ViewingParty.new(date: past_date, start_time: past_start, movie_id: @movie_id, duration: 100)
     expect(past_party).to_not be_valid
 
-    future_date = (DateTime.now + 1.day).to_fs(:db)
+    future_date = (DateTime.now + 2.days).to_fs(:db)
     future_start = (DateTime.now + 2.hours).to_fs(:db)
     future_party = ViewingParty.new(date: future_date, start_time: future_start, movie_id: @movie_id, duration: 100)
 
