@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :signed_in?, only: :show
    def new
       @user = User.new
    end
@@ -23,5 +23,10 @@ private
 
   def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def signed_in?
+    redirect_to root_path unless current_user.present?
+    flash[:alert] = "Must be logged in or registered to access a user's dashboard"
   end
 end

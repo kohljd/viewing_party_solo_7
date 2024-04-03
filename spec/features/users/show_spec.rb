@@ -53,9 +53,7 @@ RSpec.describe "User's Dashboard (Show Page)", type: :feature do
       context "given user's location at login and a previous login < 8 hours ago" do
         it "displays '[User]'s Dashboard' and 'Location:'" do
           log_in_as(user_1, "Morning, Espresso")
-          save_and_open_page
           click_on "Sign Out"
-          save_and_open_page
           log_in_as(user_1, "Evening, Coffee")
   
           expect(page).to have_content("Megan's Dashboard")
@@ -74,6 +72,7 @@ RSpec.describe "User's Dashboard (Show Page)", type: :feature do
 
     describe "sign out button" do
       it "redirects to Welcome Page" do
+        log_in_as(user_1, "Morning, Espresso")
         visit user_path(user_1)
         click_on "Sign Out"
         expect(page).to have_content("Sign In")
