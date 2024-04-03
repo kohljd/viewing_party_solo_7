@@ -1,4 +1,9 @@
 <h1><%= "#{@user.name}'s Dashboard" %></h1><br>
+<% if cookies.encrypted[:user_location].present? %>
+  <h2>Location: <%= cookies.encrypted[:user_location]%> </h2>
+<% end %>
+
+<%= button_to "Sign Out", logout_path, method: :delete, class: "btn btn-lg btn-outline-secondary" %>
 
 <section class="viewing_parties">
   <% @user.viewing_parties.each do |party| %>
